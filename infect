@@ -4,15 +4,22 @@ echo "Warning: tags are not implemented yet, always pulling from HEAD"
 
 checkout() {
   if [ -d "$1" ]; then
-    PWD=`pwd`
-    cd $1
+    pushd $1 > /dev/null
     echo "pulling $1"
     git pull
-    cd "$PWD"
+    popd > /dev/null
   else
     echo "cloning $1"
     git clone https://github.com/$REPO.git $1
   fi
+}
+
+unpack() {
+  echo "unpacking $2 into $3"
+  for DIR in $2/*/; do
+    mkdir -p $3/`basename $DIR`/$1
+    cp -R $DIR/* $3/`basename $DIR`/$1
+  done
 }
 
 JSON=`cat infection.json | tr -d '[\r\n]' | JSON.sh`
@@ -28,6 +35,10 @@ for with in $WITH ; do
   TAG=`echo $with | cut -d: -f2`
   
   checkout "packages/$REPO"
-  echo "todo: copy files from Packages/$REPO into $INFECT"
 done
 
+for PACKAGE in ./packages/*/*/; do
+  PACKAGEROOT=`cat $PACKAGE/infection.json | tr -d '[\r\n]' | JSON.sh | grep '\["infect"\]' | cut -f 2 | tr -d "[\'\"]"`
+
+  unpack $PACKAGE $PACKAGE$PACKAGEROOT $INFECT
+done
