@@ -41,5 +41,5 @@ Needs implementing
 * the ability to diff unpacked and packed copies of all packages
 * the ability to make certain folders only unpack on development packages (i.e. test folders)
 * an install script
-* a warning if .gitignore does not ignore the packages directories
+* a warning if .gitignore does not ignore the packages directories (where to even put this? pre-commit hook?)
 * JSON.sh is just sitting in the bin folder right now, do we even care?
