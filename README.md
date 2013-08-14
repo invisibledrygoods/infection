@@ -1,7 +1,7 @@
 infection
 =========
 
-This is a work in progress github based package manager. Features are implemented as needed and when there is time.
+This is a work in progress github based package manager. It's like a cross between npm and pathogen. Features are implemented as needed and when there is time.
 
 example infection.json
 ----------------------
