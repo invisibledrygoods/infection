@@ -3,14 +3,14 @@ infection
 
 This is a work in progress github based package manager. It's like a cross between npm and pathogen. Features are implemented as needed and when there is time.
 
-installation
+Installation
 ------------
 
 Put this in your shell
 
     curl -o "/bin/#1" "https://raw.github.com/invisibledrygoods/infection/master/bin/{infect-checkout,infect-pack,infect-unpack,JSON.sh}"
 
-example infection.json
+Example infection.json
 ----------------------
 
 (note: checking out from tags is not implemented yet, just include them for future proofing)
