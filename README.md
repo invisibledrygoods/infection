@@ -8,7 +8,7 @@ Installation
 
 Put this in your shell
 
-    curl -o "/bin/#1" "https://raw.github.com/invisibledrygoods/infection/master/bin/{infect-checkout,infect-pack,infect-unpack,JSON.sh}"
+    curl -o "/bin/#1" "https://raw.githubusercontent.com/invisibledrygoods/infection/master/bin/{infect-checkout,infect-pack,infect-unpack,JSON.sh}"
 
 Example infection.json
 ----------------------
